@@ -32,7 +32,7 @@ class Stock:
     def register_output(self, product_id, amount):
         # Registers outgoing stock
         product = self.products.get(product_id)
-        if product and not getattr(product, 'expired', False) and self.inventory.get(product_id, 0) >= amount:
+        if product and not getattr(product, 'expired', False) and self.inventory.get(product_id, 0) >= amount: #if it's not expired and there is a quantity bigger than 0 
             self.inventory[product_id] -= amount
             record = MovementRecord(product_id, "output", amount, datetime.now()) #record is a single movement represented as an object
             self.history.append(record) # record is now added to the inventory's history
