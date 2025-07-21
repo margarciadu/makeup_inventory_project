@@ -46,12 +46,3 @@ Este sistema incluye las siguientes opciones de menú:
 0. **Salir**  
    Finaliza el programa.
 
-
-
-Product <|-- Makeup
-Product <|-- Perfume
-Stock --> Product : manages
-Stock --> MovementRecord : logs
-
-```
-
