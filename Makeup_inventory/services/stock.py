@@ -43,8 +43,8 @@ class Stock:
     def show_inventory(self):
          # Displays current inventory even product with 0 amount in stock
         print("\n=== CURRENT INVENTORY ===")
-        for pid, product in self.products.items():
-            quantity = self.inventory.get(pid, 0) # if no entries have been registered, it shows the product´s quantity as 0
+        for pid, product in self.products.items():       #iterates through the dictionary called self.products
+            quantity = self.inventory.get(pid, 0)       # if no entries have been registered, it shows the product´s quantity as 0
             status = "EXPIRED" if getattr(product, 'expired', False) else "" #checks if the product has an expired attribute and marks it if true
             print(f"{product} | Quantity: {quantity} {status}")
         print()
