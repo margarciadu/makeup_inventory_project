@@ -1,20 +1,15 @@
-# makeup_inventory_project
+# Makeup Inventory Project
 
-Alternativa 1
-Construir una aplicación que emule una un sistema de gestión de inventario para una bodega utilizando Python.
+Sistema de gestión de inventario para productos de maquillaje desarrollado en Python, utilizando programación orientada a objetos (POO) y manejo de archivos. La aplicación funciona a través de consola y permite realizar operaciones básicas de una bodega.
 
-Condiciones:
+---
 
-Código original
-Uso de herramientas vistas en el curso (CLASES)
-Interacción y manejo a través de la consola (Opcional GUI)
-Operaciones:
-Crear objeto a almacenar (+20, con diferentes atributos, el mas impostante es precio)
-Operaciones de registro de entrada, salida
-Método para obtener listado de inventario actual
-Manejo de fechas en los registros
-Features extra:
+## Funcionalidades
 
-Carga masiva de registros
-Manejo de archivos para persistencia de datos
-Generacion de reportes en forma de documentos
+- Registro de productos (nombre, marca, categoría, precio, cantidad).
+- Registro de **entradas** al inventario.
+- Registro de **salidas** del inventario.
+- Visualización del inventario actual.
+- Guardado y carga de productos desde archivo JSON.
+- Carga masiva de productos desde archivo externo.
+- Generación de reportes en formato `.txt`.
