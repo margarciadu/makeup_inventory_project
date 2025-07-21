@@ -1,5 +1,3 @@
-# === Movement Log ===
-
 # Class to represent product movements: entry, output, or expiration
 class MovementRecord:
     def __init__(self, product_id, movement_type, quantity, date):
