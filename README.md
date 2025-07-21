@@ -46,55 +46,7 @@ Este sistema incluye las siguientes opciones de menú:
 0. **Salir**  
    Finaliza el programa.
 
-# Diagrama de Clases
 
-# Diagrama de Clases
-
-```mermaid
-classDiagram
-
-class Product {
-    - name: str
-    - id: int
-    - price: float
-    - brand: str
-    + __str__(): str
-}
-
-class Makeup {
-    - color: str
-    - size: float
-    - expiration_date: date
-    - expired: bool
-    + __str__(): str
-}
-
-class Perfume {
-    - scent: str
-    - volume: float
-    + __str__(): str
-}
-
-class MovementRecord {
-    - product_id: int
-    - type: str
-    - quantity: int
-    - date: datetime
-    + __str__(): str
-}
-
-class Stock {
-    - products: dict
-    - inventory: dict
-    - history: list
-    + add_product(product)
-    + register_entry(product_id, amount)
-    + register_output(product_id, amount)
-    + show_inventory()
-    + show_history()
-    + find_product(product_id)
-    + check_expirations()
-}
 
 Product <|-- Makeup
 Product <|-- Perfume
