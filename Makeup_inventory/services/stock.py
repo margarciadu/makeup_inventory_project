@@ -45,14 +45,14 @@ class Stock:
         print("\n=== CURRENT INVENTORY ===")
         for pid, product in self.products.items():
             quantity = self.inventory.get(pid, 0) # if no entries have been registered, it shows the product´s quantity as 0
-            status = "EXPIRED" if getattr(product, 'expired', False) else ""
+            status = "EXPIRED" if getattr(product, 'expired', False) else "" #checks if the product has an expired attribute and marks it if true
             print(f"{product} | Quantity: {quantity} {status}")
         print()
 
-    def show_history(self):
-          # Displays full movement history
+    def show_history(self): 
+          # Displays full movement history (entries, outputs and expiration dates)
         print("\n=== MOVEMENT HISTORY ===")
-        for record in self.history:
+        for record in self.history: # iterates over all products in the list self.history and shows all the movements saved as "record"
             print(record)
 
     def find_product(self, product_id):
@@ -60,10 +60,9 @@ class Stock:
         return self.products.get(product_id, "Product not found")
 
     def check_expirations(self):
-        # Removes expired makeup products from inventory
-        for pid, product in self.products.items():
-            if hasattr(product, 'expiration_date') and not getattr(product, 'expired', False):
-                if product.expiration_date < datetime.now().date():
-                    product.expired = True
-                    self.history.append(MovementRecord(pid, "expired", 0, datetime.now()))
-                    print(f"Product {pid} marked as expired")
+        for pid, product in self.products.items():     # iterates over all products in the inventory       
+            if hasattr(product, 'expiration_date') and not getattr(product, 'expired', False):  # only products with an "expiration_date" attribute will be checked
+                if product.expiration_date < datetime.now().date():     # compares the expiration date to today´s date
+                    product.expired = True                              # marks the product as expired by adding a custom attribute
+                    self.history.append(MovementRecord(pid, "expired", 0, datetime.now()))    # logs the expiration as a movement record (quantity = 0)
+                    print(f"Product {pid} marked as expired")        # notifies the user in the console
